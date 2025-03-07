@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management</title>
+    <script defer src="patient.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Patient Management</h1>
+    <h2 id="doctorName">Doctor: Loading...</h2>
+
+    <form id="patientForm">
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" required>
+        <label for="disease">Disease:</label>
+        <input type="text" id="disease" required>
+        <label for="revisiteDate">Revisite Date:</label>
+        <input type="date" id="revisiteDate" required>
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+        <button type="submit">Add Patient</button>
+    </form>
+
+    <h2>Patients List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Disease</th>
+                <th>Revisite Date</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="patientTable">
+            <!-- Patients will be loaded here -->
+        </tbody>
+    </table>
+
+</body>
+</html>
