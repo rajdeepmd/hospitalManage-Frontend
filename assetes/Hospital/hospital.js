@@ -17,6 +17,9 @@ function displayHospitals(hospitals) {
             <td>${hospital.id}</td>
             <td>${hospital.name}</td>
             <td>${hospital.location}</td>
+            <td>${hospital.adminName}</td>
+            <td>${hospital.emailId}</td>
+            <td>${hospital.specialization}</td>
         </tr>`;
         tableBody.innerHTML += row;
     });
@@ -34,10 +37,18 @@ document.getElementById("hospitalForm").addEventListener("submit", function(even
 
     const name = document.getElementById("hospitalName").value;
     const location = document.getElementById("hospitalLocation").value;
+    const adminName = document.getElementById("adminName").value;
+    const specialization = document.getElementById("specialization").value;
+    const emailId = document.getElementById("emailId").value;
 
     const newHospital = {
         name: name,
-        location: location
+        location: location,
+        adminName:adminName,
+        specialization:specialization,
+        emailId:emailId
+
+
     };
 
     fetch(API_URL, {
@@ -55,6 +66,9 @@ document.getElementById("hospitalForm").addEventListener("submit", function(even
     // Clear input fields
     document.getElementById("hospitalName").value = "";
     document.getElementById("hospitalLocation").value = "";
+    document.getElementById("adminName").value = "";
+    document.getElementById("specialization").value = "";
+    document.getElementById("emailId").value = "";
 });
 
 

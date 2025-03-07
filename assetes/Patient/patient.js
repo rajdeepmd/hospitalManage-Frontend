@@ -32,6 +32,7 @@ function displayPatients(patients) {
             <td>${patient.disease}</td>
             <td>${patient.revisiteDate}</td>
             <td>${patient.age}</td>
+            <td>${patient.contactNo}</td>
         </tr>`;
         tableBody.innerHTML += row;
         sr++;
@@ -46,6 +47,7 @@ document.getElementById("patientForm").addEventListener("submit", function (even
     const disease = document.getElementById("disease").value;
     const revisiteDate = document.getElementById("revisiteDate").value;
     const age = document.getElementById("age").value;
+    const contactNo = document.getElementById("contactNo").value;
 
     const newPatient = {
         name: name,
@@ -54,7 +56,8 @@ document.getElementById("patientForm").addEventListener("submit", function (even
             id: doctorId
         },
         revisiteDate: revisiteDate,
-        age: age
+        age: age,
+        contactNo:contactNo
 
     };
 
@@ -73,6 +76,7 @@ document.getElementById("patientForm").addEventListener("submit", function (even
     document.getElementById("disease").value = "";
     document.getElementById("revisiteDate").value = "";
     document.getElementById("age").value = "";
+    document.getElementById("contactNo").value = "";
 });
 
 fetchDoctorDetails();
